@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../style.css" />
 <title>kWh Deposit Calculator | ExpertCalc</title><meta name="description" content="Estimate a rough deposit amount using connected load, assumed load factor, energy rate, and the number of deposit months." /></head><body>
-<header class="site-header"><div class="container nav"><div class="brand"><a href="../index.html">ExpertCalc</a></div><nav class="nav-links"><a href="../index.html">Home</a><a class="active" href="index.html">Calculators</a><a href="../index.html#why">Why ExpertCalc</a><a href="../index.html#custom">Custom Tools</a></nav></div></header>
+<header class="site-header"><div class="container nav"><div class="brand"><a href="../index.html">ExpertCalc</a></div><nav class="nav-links"><a href="../index.html">Home</a><a class="active" href="index.html">Calculators</a><a href="../index.html#industries">Industries</a><a href="../index.html#contact">Contact</a></nav></div></header>
 
 <main><section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="../index.html">Home</a> / <a href="index.html">Calculators</a> / kWh Deposit Calculator</div><div class="eyebrow">Utility</div><h1>kWh Deposit Calculator</h1><p>Estimate a rough deposit amount using connected load, assumed load factor, energy rate, and the number of deposit months.</p></div></section>
 <section class="page-section"><div class="container calc-layout"><div class="calc-shell">
@@ -15,8 +15,8 @@
 <label class="field-label" for="rate">Energy Rate ($ per kWh)</label><input id="rate" type="number" step="any" placeholder="Example: 0.12" />
 <label class="field-label" for="months">Deposit Months</label><input id="months" type="number" step="any" placeholder="Example: 2" />
 <button class="btn btn-primary" id="calcKwhDepositBtn" type="button">Calculate</button><p id="error" class="error"></p></div>
-<div><div class="result-card"><div class="section-label">Result</div><div class="result-value" id="resultMain">--</div><p id="resultSub">Result will appear here.</p><p id="detail1" class="small"></p><p id="detail2" class="small"></p></div>
-<div class="info-card" style="margin-top:1rem;"><div class="section-label">Formula</div><div class="formula" id="formulaOut">Connected kW × Load Factor × 8,760 × Rate ÷ 12 × Deposit Months</div></div>
-<div class="info-card" style="margin-top:1rem;"><div class="section-label">Notes</div><ul class="note-list"><li>Rough estimating tool only.</li><li>Load factor is entered as a percent and converted internally.</li><li>Useful for early-stage service discussions or planning estimates.</li></ul></div></div></div></section></main>
-<footer class="site-footer"><div class="container footer-inner"><div><strong>ExpertCalc</strong><br />Practical calculators for field work, utility operations, construction, and estimating.</div><div class="footer-note">© <span id="year"></span> ExpertCalc</div></div></footer><script src="../script.js"></script>
+<div><div class="result-card"><div class="section-label">Result</div><div class="result-value" id="resultMain">--</div><p id="resultSub">Result will appear here.</p><p id="detail1" style="color:var(--text-soft)"></p><p id="detail2" style="color:var(--text-soft)"></p></div>
+<div class="info-card" style="margin-top:1rem"><div class="section-label">Formula</div><div class="formula" id="formulaOut">Connected kW × Load Factor × 8,760 × Rate ÷ 12 × Deposit Months</div></div>
+<div class="info-card" style="margin-top:1rem"><div class="section-label">Notes</div><ul class="note-list"><li>Rough estimating tool only.</li><li>Load factor is entered as a percent and converted internally.</li><li>Useful for early-stage service discussions or planning estimates.</li></ul></div></div></div></section></main>
+<footer class="site-footer"><div class="container footer-inner"><div><strong>ExpertCalc</strong><br />Clean, practical calculators for work that needs a real answer.</div><div class="footer-note">© <span id="year"></span> ExpertCalc</div></div></footer><script src="../script.js"></script>
 </body></html>

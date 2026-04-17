@@ -1,0 +1,1 @@
+Upload all files and folders in this package to your GitHub repo, replacing the old files. This version cleans up the style, simplifies the homepage, and keeps the calculators intact.

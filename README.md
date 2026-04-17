@@ -1,3 +1,3 @@
 # ExpertCalc
 
-This version includes a homepage, calculator library, and 5 working calculators.
+Version 4 includes a cleaner homepage style, simpler navigation, and the existing working calculators.
