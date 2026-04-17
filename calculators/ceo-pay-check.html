@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Are We Paying the CEO Too Much?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --panel:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --border:#e2e8f0;
+      --accent:#2563eb;
+      --accent-dark:#1d4ed8;
+      --danger:#dc2626;
+      --warn:#d97706;
+      --ok:#16a34a;
+      --shadow:0 18px 40px rgba(15,23,42,.08);
+      --radius:22px;
+      --max:900px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, Arial, sans-serif;
+      background:linear-gradient(180deg,#f8fafc 0%,#eef2ff 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    .wrap{
+      width:min(var(--max), calc(100% - 2rem));
+      margin:0 auto;
+      padding:3rem 0 4rem;
+    }
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:1.5rem;
+    }
+    h1{
+      margin:0 0 .75rem;
+      font-size:clamp(2rem, 5vw, 3.4rem);
+      line-height:1.05;
+      letter-spacing:-.04em;
+    }
+    .sub{
+      color:var(--muted);
+      max-width:700px;
+      margin-bottom:1.5rem;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
+    }
+    label{
+      display:block;
+      font-weight:700;
+      margin-bottom:.35rem;
+    }
+    input, select{
+      width:100%;
+      padding:.9rem 1rem;
+      border-radius:14px;
+      border:1px solid var(--border);
+      font:inherit;
+      background:#fff;
+    }
+    .full{grid-column:1 / -1}
+    .actions{
+      display:flex;
+      gap:.75rem;
+      flex-wrap:wrap;
+      margin-top:1rem;
+    }
+    button{
+      border:none;
+      cursor:pointer;
+      font:inherit;
+      font-weight:700;
+      padding:.9rem 1.2rem;
+      border-radius:14px;
+    }
+    .primary{
+      background:var(--accent);
+      color:#fff;
+    }
+    .primary:hover{background:var(--accent-dark)}
+    .secondary{
+      background:#e2e8f0;
+      color:var(--text);
+    }
+    .result{
+      margin-top:1.5rem;
+      display:grid;
+      gap:1rem;
+    }
+    .score{
+      font-size:3rem;
+      font-weight:800;
+      letter-spacing:-.04em;
+      margin:0;
+    }
+    .badge{
+      display:inline-block;
+      padding:.45rem .75rem;
+      border-radius:999px;
+      font-size:.8rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .ok{background:#dcfce7;color:var(--ok)}
+    .warn{background:#fef3c7;color:var(--warn)}
+    .danger{background:#fee2e2;color:var(--danger)}
+    .muted{color:var(--muted)}
+    .small{font-size:.95rem}
+    .hidden{display:none}
+    ul{
+      margin:.6rem 0 0;
+      padding-left:1.2rem;
+    }
+    @media (max-width:700px){
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Are We Paying the CEO Too Much?</h1>
+      <p class="sub">
+        A completely scientific and absolutely unimpeachable calculator for evaluating executive compensation,
+        office morale, and the general sense that someone may be getting a little too comfortable.
+      </p>
+
+      <div class="grid">
+        <div>
+          <label for="ceoPay">CEO Annual Pay ($)</label>
+          <input type="number" id="ceoPay" placeholder="Example: 450000" />
+        </div>
+
+        <div>
+          <label for="avgEmployee">Average Employee Pay ($)</label>
+          <input type="number" id="avgEmployee" placeholder="Example: 62000" />
+        </div>
+
+        <div>
+          <label for="revenue">Annual Revenue ($)</label>
+          <input type="number" id="revenue" placeholder="Example: 85000000" />
+        </div>
+
+        <div>
+          <label for="margin">Net Margin (%)</label>
+          <input type="number" id="margin" placeholder="Example: 6" />
+        </div>
+
+        <div>
+          <label for="employees">Employee Count</label>
+          <input type="number" id="employees" placeholder="Example: 120" />
+        </div>
+
+        <div>
+          <label for="annoyance">Personal Annoyance Factor</label>
+          <select id="annoyance">
+            <option value="0">Feeling charitable</option>
+            <option value="5">Slightly suspicious</option>
+            <option value="10">Mildly irritated</option>
+            <option value="20">Board-meeting energy</option>
+            <option value="30">Absolutely fed up</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label for="bonus">Was there a bonus right after layoffs or budget cuts?</label>
+          <select id="bonus">
+            <option value="0">No</option>
+            <option value="20">Yes, suspiciously</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="primary" onclick="runCalc()">Calculate Executive Audacity</button>
+        <button class="secondary" onclick="resetCalc()">Reset</button>
+      </div>
+
+      <div id="result" class="result hidden">
+        <div>
+          <span id="badge" class="badge">Result</span>
+          <p id="score" class="score">0/100</p>
+          <p id="headline"></p>
+          <p id="summary" class="muted"></p>
+        </div>
+
+        <div class="card" style="padding:1rem;">
+          <strong>Breakdown</strong>
+          <ul id="breakdown" class="small"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function money(n) {
+      return Number(n).toLocaleString(undefined, {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0
+      });
+    }
+
+    function runCalc() {
+      const ceoPay = parseFloat(document.getElementById("ceoPay").value);
+      const avgEmployee = parseFloat(document.getElementById("avgEmployee").value);
+      const revenue = parseFloat(document.getElementById("revenue").value);
+      const margin = parseFloat(document.getElementById("margin").value);
+      const employees = parseFloat(document.getElementById("employees").value);
+      const annoyance = parseFloat(document.getElementById("annoyance").value);
+      const bonus = parseFloat(document.getElementById("bonus").value);
+
+      if (
+        !isFinite(ceoPay) || ceoPay <= 0 ||
+        !isFinite(avgEmployee) || avgEmployee <= 0 ||
+        !isFinite(revenue) || revenue <= 0 ||
+        !isFinite(margin) ||
+        !isFinite(employees) || employees <= 0
+      ) {
+        alert("Enter valid numbers in all fields. Humanity was given calculators for a reason.");
+        return;
+      }
+
+      const payRatio = ceoPay / avgEmployee;
+      const payAsRevenue = (ceoPay / revenue) * 100;
+      const profitPenalty = margin < 3 ? 20 : margin < 7 ? 10 : 0;
+      const ratioScore =
+        payRatio < 5 ? 5 :
+        payRatio < 10 ? 15 :
+        payRatio < 20 ? 35 :
+        payRatio < 40 ? 60 :
+        80;
+
+      const revenueScore =
+        payAsRevenue < 0.1 ? 5 :
+        payAsRevenue < 0.25 ? 12 :
+        payAsRevenue < 0.5 ? 20 :
+        30;
+
+      const smallCompanyPenalty = employees < 50 && ceoPay > 300000 ? 15 : 0;
+
+      let total = ratioScore + revenueScore + profitPenalty + annoyance + bonus + smallCompanyPenalty;
+      if (total > 100) total = 100;
+
+      let badgeClass = "ok";
+      let badgeText = "Probably Fine";
+      let headline = "This does not appear outrageous.";
+      let summary = "The calculator reluctantly admits the compensation may be within reason.";
+
+      if (total >= 25 && total < 50) {
+        badgeClass = "warn";
+        badgeText = "Looks a Little Rich";
+        headline = "There may be some executive comfort happening here.";
+        summary = "Not an emergency, but someone might be enjoying the leather chair a bit too much.";
+      } else if (total >= 50 && total < 75) {
+        badgeClass = "warn";
+        badgeText = "Board Meeting Material";
+        headline = "This is entering serious side-eye territory.";
+        summary = "Enough indicators suggest it may be time for hard questions and tighter coffee service.";
+      } else if (total >= 75) {
+        badgeClass = "danger";
+        badgeText = "Absolutely Paying Too Much";
+        headline = "The calculator has concerns.";
+        summary = "At this level, the compensation package appears to be operating with a level of self-confidence not shared by the rest of payroll.";
+      }
+
+      const breakdown = [
+        `CEO pay: ${money(ceoPay)}`,
+        `Average employee pay: ${money(avgEmployee)}`,
+        `CEO-to-employee pay ratio: ${payRatio.toFixed(1)}x`,
+        `CEO pay as % of revenue: ${payAsRevenue.toFixed(3)}%`,
+        `Net margin entered: ${margin.toFixed(1)}%`,
+        `Employee count: ${employees}`,
+        `Annoyance factor applied: +${annoyance}`,
+        `Bonus penalty applied: +${bonus}`,
+        `Small company penalty applied: +${smallCompanyPenalty}`
+      ];
+
+      document.getElementById("badge").className = "badge " + badgeClass;
+      document.getElementById("badge").textContent = badgeText;
+      document.getElementById("score").textContent = total.toFixed(0) + "/100";
+      document.getElementById("headline").textContent = headline;
+      document.getElementById("summary").textContent = summary;
+      document.getElementById("breakdown").innerHTML = breakdown.map(item => `<li>${item}</li>`).join("");
+      document.getElementById("result").classList.remove("hidden");
+    }
+
+    function resetCalc() {
+      document.getElementById("ceoPay").value = "";
+      document.getElementById("avgEmployee").value = "";
+      document.getElementById("revenue").value = "";
+      document.getElementById("margin").value = "";
+      document.getElementById("employees").value = "";
+      document.getElementById("annoyance").value = "0";
+      document.getElementById("bonus").value = "0";
+      document.getElementById("result").classList.add("hidden");
+    }
+  </script>
+</body>
+</html>
