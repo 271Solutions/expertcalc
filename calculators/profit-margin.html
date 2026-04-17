@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css" />
+<title>Profit Margin Calculator | ExpertCalc</title><meta name="description" content="Calculate gross profit margin from job cost and selling price. Useful for bids, service pricing, and quick estimate checks." /></head><body>
+<header class="site-header"><div class="container nav"><div class="brand"><a href="../index.html">ExpertCalc</a></div><nav class="nav-links"><a href="../index.html">Home</a><a class="active" href="index.html">Calculators</a><a href="../index.html#why">Why ExpertCalc</a><a href="../index.html#custom">Custom Tools</a></nav></div></header>
+
+<main><section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="../index.html">Home</a> / <a href="index.html">Calculators</a> / Profit Margin Calculator</div><div class="eyebrow">Estimating</div><h1>Profit Margin Calculator</h1><p>Calculate gross profit margin from job cost and selling price. Useful for bids, service pricing, and quick estimate checks.</p></div></section>
+<section class="page-section"><div class="container calc-layout"><div class="calc-shell">
+<label class="field-label" for="cost">Cost ($)</label><input id="cost" type="number" step="any" placeholder="Example: 800" />
+<label class="field-label" for="price">Selling Price ($)</label><input id="price" type="number" step="any" placeholder="Example: 1200" />
+<button class="btn btn-primary" id="calcProfitBtn" type="button">Calculate</button><p id="error" class="error"></p></div>
+<div><div class="result-card"><div class="section-label">Result</div><div class="result-value" id="resultMain">--</div><p id="resultSub">Result will appear here.</p><p id="detail1" class="small"></p><p id="detail2" class="small"></p></div>
+<div class="info-card" style="margin-top:1rem;"><div class="section-label">Formula</div><div class="formula" id="formulaOut">(Selling Price - Cost) ÷ Selling Price × 100 = Margin %</div></div>
+<div class="info-card" style="margin-top:1rem;"><div class="section-label">Notes</div><ul class="note-list"><li>Margin and markup are not the same thing.</li><li>Margin tells you what percentage of the selling price is profit.</li><li>Useful for contractors, photographers, and service businesses.</li></ul></div></div></div></section></main>
+<footer class="site-footer"><div class="container footer-inner"><div><strong>ExpertCalc</strong><br />Practical calculators for field work, utility operations, construction, and estimating.</div><div class="footer-note">© <span id="year"></span> ExpertCalc</div></div></footer><script src="../script.js"></script>
+</body></html>

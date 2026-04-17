@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css" />
+<title>Concrete Volume Calculator | ExpertCalc</title><meta name="description" content="Estimate slab, footing, pad, or pier volume in cubic yards. Enter length and width in feet, then thickness in inches or feet." /></head><body>
+<header class="site-header"><div class="container nav"><div class="brand"><a href="../index.html">ExpertCalc</a></div><nav class="nav-links"><a href="../index.html">Home</a><a class="active" href="index.html">Calculators</a><a href="../index.html#why">Why ExpertCalc</a><a href="../index.html#custom">Custom Tools</a></nav></div></header>
+
+<main><section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="../index.html">Home</a> / <a href="index.html">Calculators</a> / Concrete Volume Calculator</div><div class="eyebrow">Construction</div><h1>Concrete Volume Calculator</h1><p>Estimate slab, footing, pad, or pier volume in cubic yards. Enter length and width in feet, then thickness in inches or feet.</p></div></section>
+<section class="page-section"><div class="container calc-layout"><div class="calc-shell">
+<label class="field-label" for="length">Length (ft)</label><input id="length" type="number" step="any" placeholder="Example: 20" />
+<label class="field-label" for="width">Width (ft)</label><input id="width" type="number" step="any" placeholder="Example: 30" />
+<label class="field-label" for="thickness">Thickness</label><input id="thickness" type="number" step="any" placeholder="Example: 4" />
+<label class="field-label" for="thicknessUnit">Thickness Unit</label><select id="thicknessUnit"><option value="in">Inches</option><option value="ft">Feet</option></select>
+<button class="btn btn-primary" id="calcConcreteBtn" type="button">Calculate</button><p id="error" class="error"></p></div>
+<div><div class="result-card"><div class="section-label">Result</div><div class="result-value" id="resultMain">--</div><p id="resultSub">Result will appear here.</p><p id="detail1" class="small"></p><p id="detail2" class="small"></p></div>
+<div class="info-card" style="margin-top:1rem;"><div class="section-label">Formula</div><div class="formula" id="formulaOut">(Length × Width × Thickness in feet) ÷ 27 = Cubic Yards</div></div>
+<div class="info-card" style="margin-top:1rem;"><div class="section-label">Notes</div><ul class="note-list"><li>Assumes simple rectangular geometry.</li><li>Thickness in inches is converted to feet before calculating.</li><li>Add a waste factor based on job conditions and placement losses.</li></ul></div></div></div></section></main>
+<footer class="site-footer"><div class="container footer-inner"><div><strong>ExpertCalc</strong><br />Practical calculators for field work, utility operations, construction, and estimating.</div><div class="footer-note">© <span id="year"></span> ExpertCalc</div></div></footer><script src="../script.js"></script>
+</body></html>

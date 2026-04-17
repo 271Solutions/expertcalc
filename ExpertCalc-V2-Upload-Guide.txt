@@ -1,0 +1,1 @@
+Upload all files and folders in this package to your existing GitHub repo, replacing older files where needed. Vercel should redeploy automatically after the commit.

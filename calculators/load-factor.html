@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../style.css" />
+<title>Load Factor Calculator | ExpertCalc</title><meta name="description" content="Estimate load factor from annual kWh usage and peak demand in kW. Helpful for service review and planning." /></head><body>
+<header class="site-header"><div class="container nav"><div class="brand"><a href="../index.html">ExpertCalc</a></div><nav class="nav-links"><a href="../index.html">Home</a><a class="active" href="index.html">Calculators</a><a href="../index.html#why">Why ExpertCalc</a><a href="../index.html#custom">Custom Tools</a></nav></div></header>
+
+<main><section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="../index.html">Home</a> / <a href="index.html">Calculators</a> / Load Factor Calculator</div><div class="eyebrow">Utility</div><h1>Load Factor Calculator</h1><p>Estimate load factor from annual kWh usage and peak demand in kW. Helpful for service review and planning.</p></div></section>
+<section class="page-section"><div class="container calc-layout"><div class="calc-shell">
+<label class="field-label" for="annualKwh">Annual Energy (kWh)</label><input id="annualKwh" type="number" step="any" placeholder="Example: 220000" />
+<label class="field-label" for="peakKw">Peak Demand (kW)</label><input id="peakKw" type="number" step="any" placeholder="Example: 90" />
+<button class="btn btn-primary" id="calcLoadFactorBtn" type="button">Calculate</button><p id="error" class="error"></p></div>
+<div><div class="result-card"><div class="section-label">Result</div><div class="result-value" id="resultMain">--</div><p id="resultSub">Result will appear here.</p><p id="detail1" class="small"></p><p id="detail2" class="small"></p></div>
+<div class="info-card" style="margin-top:1rem;"><div class="section-label">Formula</div><div class="formula" id="formulaOut">(Annual kWh ÷ 8,760) ÷ Peak kW × 100 = Load Factor %</div></div>
+<div class="info-card" style="margin-top:1rem;"><div class="section-label">Notes</div><ul class="note-list"><li>Load factor compares average demand to peak demand across the year.</li><li>Higher load factor generally means more even usage over time.</li><li>This is a planning and estimating tool, not a billing engine.</li></ul></div></div></div></section></main>
+<footer class="site-footer"><div class="container footer-inner"><div><strong>ExpertCalc</strong><br />Practical calculators for field work, utility operations, construction, and estimating.</div><div class="footer-note">© <span id="year"></span> ExpertCalc</div></div></footer><script src="../script.js"></script>
+</body></html>
