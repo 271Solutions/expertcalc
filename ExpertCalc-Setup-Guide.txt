@@ -1,0 +1,73 @@
+ExpertCalc Browser-Only Setup Guide
+
+PART 1: CREATE THE GITHUB REPOSITORY
+
+1. Sign in to GitHub.
+2. In the upper-right corner, click the + icon.
+3. Click New repository.
+4. In Repository name, enter:
+   expertcalc
+5. Description:
+   Practical calculators for field work, utility operations, construction, and estimating.
+6. Choose Public.
+7. Check Add a README file.
+8. For .gitignore, choose None.
+9. For license, choose None.
+10. Click Create repository.
+
+PART 2: UPLOAD THE WEBSITE FILES TO GITHUB
+
+1. Open your new repository.
+2. Click Add file.
+3. Click Upload files.
+4. Drag these files into the upload window:
+   - index.html
+   - style.css
+   - script.js
+   - README.md
+5. If GitHub asks whether to replace README.md, allow it.
+6. In the commit message box, enter:
+   Add ExpertCalc launch files
+7. Click Commit changes.
+
+PART 3: CONNECT THE REPO TO VERCEL
+
+1. Go to vercel.com and sign in.
+2. If asked, sign in with GitHub.
+3. Click Add New.
+4. Click Project.
+5. Under Import Git Repository, find expertcalc.
+6. Click Import.
+7. Leave the project settings at their defaults.
+8. Click Deploy.
+9. Wait for the deployment to finish.
+10. Open the temporary .vercel.app URL and confirm the site loads.
+
+PART 4: CONNECT YOUR CUSTOM DOMAIN
+
+1. In Vercel, open your project.
+2. Click Settings.
+3. Click Domains.
+4. Click Add Domain.
+5. Enter:
+   expertcalc.com
+6. Add:
+   www.expertcalc.com
+7. Vercel will show you the DNS records or nameserver instructions you need.
+8. Go to the company where you bought the domain.
+9. Add the DNS records exactly as Vercel shows them.
+10. Return to Vercel and wait for verification.
+
+PART 5: FUTURE UPDATES
+
+1. Open the GitHub repository.
+2. Replace or edit files using Add file or the pencil edit button.
+3. Commit the changes.
+4. Vercel will automatically redeploy the site.
+
+FILES INCLUDED
+
+- index.html
+- style.css
+- script.js
+- README.md
